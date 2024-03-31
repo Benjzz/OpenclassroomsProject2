@@ -9,6 +9,7 @@
   --main-color: #0065fc;
   --main-bg-color: #f2f2f2;
   --filter-bg-color: #deebff;
+  --border-color: #d9d9d9;
 }
 
 .fa-solid {
@@ -82,9 +83,95 @@ nav a {
   padding: 16px 0 44px 0;
 }
 nav a:hover {
-  border-top: 2px solid #0065fc;
-  color: #0065fc;
+  border-top: 2px solid var(--main-color);
+  color: var(--main-color);
   padding-top: 14px;
+}
+
+/****** Research ***********/
+.research {
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+.research-title p {
+  margin-top: 8px;
+}
+
+.research-bar {
+  display: flex;
+}
+.i-location {
+  font-size: 18px;
+  color: black;
+  background: var(--main-bg-color);
+  padding: 15px 18px;
+  border-radius: 15px 0 0 15px;
+  -webkit-border-radius: 15px 0 0 15px;
+  -moz-border-radius: 15px 0 0 15px;
+  -ms-border-radius: 15px 0 0 15px;
+  -o-border-radius: 15px 0 0 15px;
+}
+.research-bar input {
+  border: none;
+  font-size: 18px;
+  font-weight: 700;
+}
+.research-bar input[type='text'] {
+  text-align: center;
+  width: 195px;
+}
+.research-bar input[type='button'] {
+  cursor: pointer;
+  padding: 14px 16px;
+  background: var(--main-color);
+  color: white;
+  border-radius: 0 15px 15px 0;
+  -webkit-border-radius: 0 15px 15px 0;
+  -moz-border-radius: 0 15px 15px 0;
+  -ms-border-radius: 0 15px 15px 0;
+  -o-border-radius: 0 15px 15px 0;
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.filter-button {
+  font-size: 18px;
+  font-weight: 700;
+  border: 2px solid var(--border-color);
+  border-radius: 25px;
+  background: none;
+  padding: 14px 19px;
+  cursor: pointer;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+.filter-button:hover {
+  background: var(--filter-bg-color);
+}
+.filter-button i {
+  margin-right: 10px;
+}
+.research-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.i-info {
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
+  font-size: 10px;
+  padding: 5px 9px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
 }
 
 /****** Hebergements And Populaires ***********/
@@ -117,9 +204,12 @@ nav a:hover {
 .hebergements-cards img {
   height: 124px;
   width: 100%;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  border-radius: 20px 20px 0 0;
   box-sizing: border-box;
+  -webkit-border-radius: 20px 20px 0 0;
+  -moz-border-radius: 20px 20px 0 0;
+  -ms-border-radius: 20px 20px 0 0;
+  -o-border-radius: 20px 20px 0 0;
 }
 .hebergements-cards .card-content {
   margin: 4px 10px 10px;
