@@ -24,7 +24,7 @@ body {
 .main-container {
   width: 100%;
   max-width: 1440px;
-  padding: 0 50px;
+  margin: 0 50px;
   box-sizing: border-box;
 }
 
@@ -69,6 +69,10 @@ a {
   color: black;
 }
 
+.white {
+  color: white;
+}
+
 /****** Header ******/
 header {
   display: flex;
@@ -76,7 +80,7 @@ header {
 }
 header img {
   height: 19px;
-  padding: 30px 0;
+  margin: 30px 0;
 }
 nav {
   display: flex;
@@ -116,16 +120,17 @@ nav a:hover {
   -ms-border-radius: 15px 0 0 15px;
   -o-border-radius: 15px 0 0 15px;
 }
-.research-bar input {
+.research-bar input,
+.research-btn {
   border: none;
   font-size: 18px;
   font-weight: 700;
 }
 .research-bar input[type='text'] {
+  padding: 14px 24px;
   text-align: center;
-  width: 195px;
 }
-.research-bar input[type='button'] {
+.research-btn {
   cursor: pointer;
   padding: 14px 16px;
   background: var(--main-color);
@@ -135,6 +140,9 @@ nav a:hover {
   -moz-border-radius: 0 15px 15px 0;
   -ms-border-radius: 0 15px 15px 0;
   -o-border-radius: 0 15px 15px 0;
+}
+.research-btn span:nth-child(2) {
+  display: none;
 }
 
 .filter-container {
@@ -230,15 +238,21 @@ nav a:hover {
   width: 32%;
 }
 
+.populaires-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
 .populaires-title {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 30px;
 }
 
 .populaires-cards .card {
   display: flex;
-  margin-top: 33px;
 }
 
 .populaires-cards img {
@@ -278,7 +292,7 @@ nav a:hover {
   display: flex;
   flex-direction: row;
   gap: 30px;
-  margin-top: 30px;
+  padding: 30px 0;
 }
 .activites-cards a {
   width: 25%;
@@ -291,7 +305,7 @@ nav a:hover {
   border-top-right-radius: 20px;
 }
 .activites-cards .card-title {
-  margin: 20px 19px;
+  padding: 20px 19px;
 }
 
 /****** Footer ******/
@@ -326,14 +340,17 @@ footer {
     margin-top: 50px;
   }
 
+  .populaires-title {
+    margin-bottom: 20px;
+  }
+
   .populaires-cards {
-    display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    gap: 20px;
   }
 
   .populaires-cards a {
-    width: 30%;
+    width: 33%;
   }
 
   .populaires-cards .card-title {
@@ -357,5 +374,109 @@ footer {
 
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
-  /* ... */
+  .main-container {
+    margin: 0;
+  }
+  main {
+    margin: 0 20px;
+  }
+
+  /****** Header ******/
+  header {
+    flex-direction: column;
+  }
+  header img {
+    margin: 30px auto;
+  }
+  nav {
+    gap: 0;
+    text-align: center;
+  }
+  nav a {
+    padding: 0;
+    width: 50%;
+    padding-bottom: 16px;
+  }
+  nav a:hover {
+    border-top: none;
+    border-bottom: 2px solid var(--main-color);
+    color: var(--main-color);
+    padding-top: 0;
+    padding-bottom: 14px;
+  }
+
+  /****** Research ******/
+  .research {
+    margin: 30px 0 35px;
+  }
+  .research-bar {
+    width: 100%;
+  }
+  .research-bar input[type='text'] {
+    text-align: left;
+  }
+  .button-container {
+    flex-wrap: wrap;
+    row-gap: 20px;
+    column-gap: 10px;
+  }
+  .filter-button {
+    width: calc(50% - 15px);
+  }
+  .research-btn span:nth-child(1) {
+    display: none;
+  }
+  .research-btn span:nth-child(2) {
+    display: inline;
+  }
+
+  /****** Hebergements And Populaires ******/
+  .hebergements-and-populaires {
+    flex-direction: column-reverse;
+    gap: 15px;
+  }
+  .hebergements-and-populaires section {
+    padding: 0;
+    background: none;
+  }
+
+  /****** Hebergements ******/
+  .hebergements-cards {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .hebergements-cards a {
+    width: 100%;
+  }
+
+  /****** Populaires ***********/
+  .populaires {
+    margin: 30px 0 35px;
+  }
+  .populaires-cards {
+    flex-direction: column;
+  }
+  .populaires-cards a {
+    width: 100%;
+  }
+
+  /****** Activités ******/
+  #activites {
+    padding: 0;
+  }
+  .activites-cards {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .activites-cards a {
+    width: auto;
+  }
+
+  /****** Footer ******/
+  footer {
+    flex-direction: column;
+  }
+  .footer-content {
+    width: auto;
+  }
 }
